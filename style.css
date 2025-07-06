@@ -1,0 +1,393 @@
+    :root {
+        --pri: #fff;
+        --sec: #111;
+        --ter: #333;
+    }
+
+    @font-face {
+        font-family: aeonik;
+        font-weight: 200;
+        src: url(./AeonikTRIAL-Light.otf);
+    }
+
+    @font-face {
+        font-family: aeonik;
+        font-weight: 300;
+        src: url(./AeonikTRIAL-LightItalic.otf);
+    }
+
+    @font-face {
+        font-family: aeonik;
+        font-weight: 500;
+        src: url(./AeonikTRIAL-Regular.otf);
+    }
+
+    @font-face {
+        font-family: aeonik;
+        font-weight: 700;
+        src: url(./AeonikTRIAL-Bold.otf);
+    }
+
+
+    @font-face {
+    font-family: Omaha;
+    src: url("./OmahaBeachRegular-ZVYZl.ttf");
+    
+}
+    @font-face {
+    font-family: Caveat;
+    src: url("./Caveat-VariableFont_wght.ttf");
+    
+}
+    
+
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: var(--pri);
+        font-family: aeonik;
+    }
+
+    /* h1{
+        font-size: 100px;
+        font-family: aeonik;
+        font-weight: 300;
+    }  */
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #111;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main {
+        width: 90%;
+        height: 100%;
+        background: #333333;
+        border-radius: 45px;
+        margin-bottom: 10%;
+
+    }
+
+    .headin {
+        width: 90%;
+        height: 80px;
+        padding: .5% 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .headin h1{
+        font-size: 50px;
+    }
+    .allElems {
+        height: 80%;
+        width: 90%;
+        background-color: rgb(92, 92, 92);
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 50px;
+        border-radius: 45px;
+        position: absolute;
+    }
+
+    .elem {
+        background-color: var(--ter);
+        height: 200px;
+        width: 350px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        border: none;
+        transition: ease .7s;
+        cursor: pointer;
+    }
+
+    .elem:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .elem img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .elem h2 {
+        position: absolute;
+        right: 3%;
+        bottom: 3%;
+        font-weight: 200;
+    }
+
+    .elem:active {
+        scale: 0.97;
+    }
+
+    .fullElems {
+        height: 80%;
+        width: 90%;
+        padding: 20px 40px;
+        margin-bottom: 50%;
+        border-radius: 45px;
+
+        background-color: #333;
+        display: none;
+        position: absolute;
+
+    }
+
+    .fullElems h1 {
+        font-size: 60px;
+    }
+
+    .back {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: xx-large;
+        cursor: pointer;
+    }
+
+    .todo-visual {
+        margin-top: 15px;
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 1%;
+    }
+
+    .todo-op {
+        background-color: rgba(112, 112, 112, 0.441);
+        width: 57%;
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        overflow: auto;
+
+
+    }
+
+    .todo-op::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .todo-op::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .todo-op::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        background-clip: content-box;
+    }
+
+    .todo-op::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .todo-ip {
+        background-color: rgba(112, 112, 112, 0.441);
+        width: 41%;
+        height: 100%;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        gap: 10px;
+    }
+
+    .newTask,
+    .moreDetails {
+        width: 90%;
+    }
+
+    .newTask {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .moreDetails {
+        height: 82%;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .newTask input,
+    .moreDetails textarea {
+        background-color: rgba(32, 32, 32, 0.441);
+        /* color: #111; */
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        resize: none;
+        height: 100%;
+
+    }
+
+    textarea:focus,
+    input:focus {
+        outline: none;
+        border: none;
+        box-shadow: 0 5px 5px rgba(209, 209, 209, 0.2);
+        /* animation: gradientFlow 2s infinite linear; */
+    }
+
+    .task-box {
+        background-color: #ffffff22;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        gap: 2px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .task-box h3 {
+        /* margin-bottom: 5px; */
+        font-size: 18px;
+    }
+
+
+    .task-box p {
+        font-size: 14px;
+        /* overflow:visible; */
+        color: #ddd;
+    }
+
+    .task-box button {
+        border: none;
+        height: 25px;
+        width: 60px;
+        border-radius: 5px;
+    }
+
+    .done {
+        background-color: green;
+    }
+
+    .undone {
+        background-color: red;
+    }
+
+    .form-btn {
+        background: rgba(32, 32, 32, 0.441);
+        color: #ddd;
+
+        font-size: 14px;
+        width: 90%;
+        padding: 4px 4px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    #remove-all-btn {
+        margin-bottom: 10px;
+    }
+
+    #remove-all-btn:hover {
+        background: #ff00002f;
+        color: #ffffffb0;
+    }
+
+
+
+    .form-btn:hover {
+        background: #0000005e;
+        color: #ffffffbb;
+    }
+
+
+
+    .dekhte {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+
+    }
+
+    .dekhte h2{
+        color: rgba(241, 241, 241, 0.299);
+        text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    #quote{
+        /* background: red; */
+        
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100% ;
+        height: 80%;
+        font-family: Caveat;
+        font-size: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-shadow: 0px 0px 20px rgba(0.2, 0.2, 0, 0.7);
+        letter-spacing: -.5px;
+        line-height: 75px;
+    }
+
+    
+
+    #author{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        align-self: center;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .quote-btn{
+        border: none;
+        font-size: 14px;
+        border-radius: 4px;
+        background: rgba(158, 158, 158, 0.105);
+        color: #8888884e;
+        display: flex;
+        padding: 4px 6px;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .quote-btn:hover{
+        background: rgba(158, 158, 158, 0.837);
+        color: #00000092;
+    }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="headin">
+        <h1 class="logo">Productivity Dashboard</h1>
+        <p>Hare Krishna</p>
+
+    </div>
+    <div class="main">
+        <section class="allElems">
+            <div class="weather elem" id="0">
+                <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D"
+                    alt="">
+                <h2>Weather </h2>
+            </div>
+            <div class="motivation elem" id="1">
+                <img src="https://images.unsplash.com/photo-1497561813398-8fcc7a37b567?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fG1vdGl2YXRpb258ZW58MHx8MHx8fDA%3D"
+                    alt="">
+                <h2>Motivation</h2>
+            </div>
+            <div class="pomodoro elem" id="2">
+                <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cG9tb2Rvcm98ZW58MHx8MHx8fDA%3D"
+                    alt="">
+                <h2>Pomodoro</h2>
+            </div>
+
+            <div class="smthing elem" id="3">
+                <img src="https://images.unsplash.com/photo-1747409020038-f1e1a7060906?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzM3x8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h2>Smthing</h2>
+            </div>
+            <div class="todo elem" id="4">
+                <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGFza3xlbnwwfHwwfHx8MA%3D%3D"
+                    alt="">
+                <h2>Task-List</h2>
+            </div>
+        </section>
+        <section class="fullElems weather-full-page">
+            <button class="back" id="0"><i class="ri-close-large-line"></i></button>
+            <h1>Weather</h1>
+            <p>Welcome to the live weather forecast page.</p>
+            <p>Check current temperature, humidity, wind speed, and more.</p>
+            <p>Stay updated with real-time weather conditions in your area.</p>
+            <p>Plan your day with our accurate weather updates.</p>
+
+
+        </section>
+
+        <section class="fullElems motivation-full-page">
+            <button class="back" id="1"><i class="ri-close-large-line"></i></button>
+            <!-- <h1>Motivaton</h1> -->
+            <p id="quote">Loading quote...</p>
+            <p id="author"></p>
+            <button class="quote-btn" onclick="fetchData()">New Quote</button>
+        </section>
+
+        <section class="fullElems pomodoro-full-page">
+            <button class="back" id="2"><i class="ri-close-large-line"></i></button>
+            <h1>Pomodoro</h1>
+        </section>
+
+        <section class="fullElems Smthing-full-page">
+            <button class="back" id="3"><i class="ri-close-large-line"></i></button>
+            <h1>Smthing</h1>
+        </section>
+
+        <section class="fullElems Todo-List-full-page">
+            <button class="back" id="4"><i class="ri-close-large-line"></i></button>
+            <h1>Task-List</h1>
+
+            <div class="todo-visual">
+                <div class="todo-op" id="todo-output"></div>
+
+                <!-- FORM START -->
+                <form id="todo-form" class="todo-ip">
+                    <div class="newTask">
+                        <input type="text" id="todo-title" placeholder="Add New Task" required>
+                    </div>
+                    <div class="moreDetails">
+                        <textarea id="todo-details" placeholder="More Details"></textarea>
+                    </div>
+                    <button type="submit" id="add-btn" class="form-btn">Add Task</button>
+                    <button type="button" id="remove-all-btn" class="form-btn">Remove Tasks</button>
+                </form>
+                <!-- FORM END -->
+
+            </div>
+        </section>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
