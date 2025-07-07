@@ -130,22 +130,72 @@ document.addEventListener('DOMContentLoaded', () => {
     openFeatures();
     todoList();
     fetchData();
+    pomodoro();
 });
 
 async function fetchData() {
-  try {
-    document.getElementById('quote').textContent = 'Loading...';
-    document.getElementById('author').textContent = '';
-    const response = await fetch('https://dummyjson.com/quotes/random');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+    try {
+        document.getElementById('quote').textContent = 'Loading...';
+        document.getElementById('author').textContent = '';
+        const response = await fetch('https://dummyjson.com/quotes/random');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        document.getElementById('quote').textContent = data.quote;
+        document.getElementById('author').textContent = `- ${data.author}`;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        document.getElementById('quote').textContent = 'Failed to load quote.';
+        document.getElementById('author').textContent = '';
     }
-    const data = await response.json();
-    document.getElementById('quote').textContent = data.quote;
-    document.getElementById('author').textContent = `- ${data.author}`;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    document.getElementById('quote').textContent = 'Failed to load quote.';
-    document.getElementById('author').textContent = '';
-  }
+}
+
+function pomodoro() {
+    let totalSeconds = 1500;
+    let timer = document.querySelector(".pomodoro-timer h1");
+    let startBtn = document.querySelector(".start-timer");
+    let pauseBtn = document.querySelector(".pause-timer");
+    let resetBtn = document.querySelector(".reset-timer");
+
+    let isOn = false;
+    let timerId; // store the interval ID here
+
+    function updateTime() {
+        let minutes = Math.floor(totalSeconds / 60);
+        let seconds = totalSeconds % 60;
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+        timer.innerHTML = `${minutes}:${seconds}`;
+    }
+
+    startBtn.addEventListener("click", () => {
+        if (!isOn) {
+            timerId = setInterval(() => {
+                totalSeconds--;
+                updateTime();
+                startBtn.innerHTML = "pause"
+                if (totalSeconds <= 0) {
+                    clearInterval(timerId);
+                    isOn = false;
+                }
+            }, 1000);
+            isOn = true;
+        }
+        else{
+            clearInterval(timerId);
+            isOn = false;
+            startBtn.innerHTML = "start"
+        }
+    });
+
+
+    resetBtn.addEventListener("click", () => {
+        if (!isOn) {
+            clearInterval(timerId);
+            totalSeconds = 1500;
+            updateTime();
+        }
+    });
 }

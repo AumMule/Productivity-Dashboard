@@ -41,8 +41,6 @@
 }
     
 
-
-
     * {
         margin: 0;
         padding: 0;
@@ -51,11 +49,7 @@
         font-family: aeonik;
     }
 
-    /* h1{
-        font-size: 100px;
-        font-family: aeonik;
-        font-weight: 300;
-    }  */
+    
 
     html,
     body {
@@ -88,6 +82,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
 
     .headin h1{
@@ -391,3 +386,54 @@
         background: rgba(158, 158, 158, 0.837);
         color: #00000092;
     }
+
+
+    @font-face {
+    font-family: Omaha;
+    src: url("./OmahaBeachRegular-ZVYZl.ttf");
+    font-weight: 100px;
+}
+
+body{
+    font: omaha;
+    background: #383838;
+}
+.pomodoro-timer h1{
+    font-size: 150px;
+}
+
+.pomodoro-timer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* background: red; */
+}
+
+.pomodoro-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.pomodoro-buttons button{
+    width: 70px;
+    border-radius: 2px;
+    height: 34px;
+    font-size: 20px;
+    color: #111;
+    background: #ffffff9b;
+    padding: 4px 8px;
+    border: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+.pomodoro-buttons button:active{
+    box-shadow: none;
+}
+
+h1{
+    font-family: monospace;
+    font-size: 100px;
+    
+}
